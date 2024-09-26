@@ -1,0 +1,32 @@
+Let's integrate several sorting algorithms (Bubble Sort, Selection Sort, Merge Sort, Quick Sort, and Heap Sort) into the visualization framework. Each algorithm will call the visualize() function after key steps, such as swaps or element comparisons, to demonstrate the sorting process.
+
+Step-by-Step Integration:
+Add Sorting Algorithms: For each sorting algorithm, we'll modify it to visualize the array at key moments.
+Visualize Key Steps: We'll call visualize() after key operations, such as swaps or element moves, so that the user can observe the process.
+Provide Highlights: We'll highlight the elements being compared, swapped, or partitioned to make it visually clear what's happening.
+
+Explanation of Sorting Algorithms:
+1. Bubble Sort:
+Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order. The largest unsorted element "bubbles up" to the end of the array with each pass.
+Key Visualization Step: After each swap of adjacent elements, we call visualize() to show the intermediate array.
+
+2. Selection Sort:
+Selection Sort works by selecting the smallest element from the unsorted part of the array and swapping it with the first unsorted element. It reduces the unsorted part of the array by one element each time.
+Key Visualization Step: After each swap of the minimum element to its correct position, visualize() is called.
+
+3. Merge Sort:
+Merge Sort divides the array into two halves, recursively sorts each half, and then merges the two sorted halves.
+Key Visualization Step: The merging process (when two subarrays are combined) is visualized by calling visualize() after each insertion of elements from the temporary arrays back into the main array.
+
+4. Quick Sort:
+Quick Sort selects a "pivot" element and partitions the array such that all elements smaller than the pivot are on the left, and all elements larger are on the right. It recursively sorts the partitions.
+Key Visualization Step: After each partition step, visualize() is called when elements are swapped or the pivot is placed in its correct position.
+
+5. Heap Sort:
+Heap Sort builds a max heap from the array and then extracts the largest element (root of the heap) to place it at the end of the array. It continues this process, reducing the heap size each time.
+Key Visualization Step: The heapify operation (which maintains the max heap property) is visualized after every swap.
+
+Running the Visualizer:
+Visualize Original Array: The first call to visualize(arr); in main() shows the original array.
+Sorting: Uncomment one of the sorting algorithms in main() (e.g., bubbleSort(arr);) to visualize how that specific sorting algorithm sorts the array.
+Visualize Sorted Array: After sorting, the final sorted array is displayed with a second call to visualize(arr);.
