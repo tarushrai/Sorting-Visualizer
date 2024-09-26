@@ -1,0 +1,60 @@
+This code is a sorting visualizer built using the SDL2 library in C++. The program visualizes different sorting algorithms as they work on a randomly generated array of numbers. Let's break down the main parts:
+
+1. Libraries and Global Variables
+The program includes standard libraries like SDL.h, iostream, string, and time.h.
+It defines screen dimensions using SCREEN_WIDTH = 1024 and SCREEN_HEIGHT = 768.
+SDL is initialized to render graphics in the window, represented by SDL_Window* window and SDL_Renderer* renderer.
+arr[] stores the array being sorted, while xarr[] holds the randomly generated values.
+iscomplete is a flag indicating if the sorting is done.
+
+2. SDL Setup and Visualization
+visualize(int x, int y, int z):
+This function handles the drawing of the array bars (represented as rectangles) to the screen.
+Based on the sorting process, the rectangles are rendered with different colors:
+Green (0, 204, 0): All bars when sorting is complete.
+Red (255, 0, 0): The currently swapped bars.
+Light Green (102, 255, 102): The bar being compared.
+Grey (170, 183, 184): Default color for unsorted bars.
+The SDL window and renderer are cleared and redrawn with updated positions and colors every time this function is called.
+
+3. Sorting Algorithms
+The program supports multiple sorting algorithms:
+
+* Bubble Sort (bubblesort()):
+Repeatedly swaps adjacent elements if they are in the wrong order.
+Visualized step-by-step with visualize().
+* Insertion Sort (insertionsort()):
+Builds the sorted portion of the array one element at a time, inserting each new element in the correct position.
+* Selection Sort (selectionsort()):
+Repeatedly selects the smallest unsorted element and swaps it with the first unsorted element.
+* Quick Sort (quicksort() and partitionarray()):
+A divide-and-conquer algorithm that partitions the array around a pivot element.
+The partitionarray() function rearranges the array so that elements smaller than the pivot are to its left, and larger elements are to its right.
+* Merge Sort (mergesort() and xmergesort()):
+Recursively divides the array into halves, then merges the sorted halves.
+* Heap Sort (heapsort()):
+Builds a heap from the array and then extracts the maximum element repeatedly, placing it at the end of the array.
+
+4. User Interaction
+program() manages the user interface, processing key presses:
+Press 0 to generate a new random array.
+Press 1 to 6 to select a sorting algorithm (Bubble, Insertion, Selection, Quick, Merge, or Heap Sort).
+Press q or 7 to quit the program.
+The program uses the SDL_PollEvent() function to detect keyboard inputs and respond accordingly.
+
+5. Main Flow
+The program starts with a splash screen (start1()) and an instruction menu (start2()).
+The program() function is then called, which handles the sorting visualization and key-based inputs.
+Key SDL Functions Used:
+SDL_Init(): Initializes SDL.
+SDL_CreateWindow(): Creates the SDL window.
+SDL_CreateRenderer(): Creates a renderer to draw objects.
+SDL_RenderDrawRect() and SDL_RenderFillRect(): Draws empty or filled rectangles representing the array elements.
+SDL_RenderPresent(): Updates the window with the rendered content.
+SDL_PollEvent(): Captures user input, such as key presses.
+SDL_Quit(): Cleans up and quits SDL.
+
+Program Structure:
+The main function calls start1(), start2(), and then program() in sequence.
+Sorting algorithms are executed based on user input, with the visualization updated on each iteration of the sorting steps.
+The sorting visualizer helps users observe how different sorting algorithms manipulate the array during the sorting process, making it easier to understand the inner workings of each algorithm.
