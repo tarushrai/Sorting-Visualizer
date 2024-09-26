@@ -28,4 +28,4 @@ The program doesn’t yet implement sorting, but this structure could easily be 
 
 How to Extend the Code for Sorting:
 In a complete sorting visualizer, you would call the visualize() function inside your sorting algorithms (Bubble Sort, Quick Sort, etc.) after each major step to display how the array changes. For example, after each swap in Bubble Sort or after each partition step in Quick Sort, you'd call visualize() to show the intermediate states of the array.
-This extended version is already present in this repository only !
+This extended version is already present in this repository only, by the name of main2.cpp
